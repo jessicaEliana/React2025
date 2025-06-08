@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import NavBar from './componentes/NavBar.tsx'
+import Ejercicio2 from './Ejercicio2.tsx';
 
 // jsx
 // const container = document.querySelector('#root');
@@ -46,6 +47,7 @@ import NavBar from './componentes/NavBar.tsx'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <NavBar/>
+    <Ejercicio2/>
     <App />
   </StrictMode>,
 )

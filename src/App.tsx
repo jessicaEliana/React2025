@@ -232,6 +232,7 @@ const response: Response = {
 }
 
 function App() {
+  
   return (
     <div>
       {response.mostRequested.map((category) => (

@@ -1,36 +1,65 @@
 .fondo {
-    min-width: 200px; /* o lo que quieras que mida la tarjeta */
-    flex: 0 0 auto;   /* importante: que no crezca más de la cuenta */
-    background-color: rgba(0, 0, 0, 0.5);
-    margin: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
+  min-width: 240px;
+  max-width: 320px;
+  flex: 0 0 auto;
+  background: rgba(255, 255, 255, 0.1); /* fondo más claro para armonía */
+  margin: 12px;
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-
-    /* background-color: rgb(0, 0, 0, 0.5);
-    margin: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center; */
+.fondo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .imagen {
-    margin-right: 10px;
-    /* border: 1px solid pink; */
-    
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+  border: 2px solid white;
+  transition: transform 0.3s ease;
 }
 
-.scroll-horizontal {
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+.imagen:hover {
+  transform: scale(1.05);
 }
+
+.fondo h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.fondo p {
+  margin: 4px 0;
+  color: #ddd;
+  font-size: 0.95rem;
+}
+
+.fondo button {
+  margin-top: 8px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff69b4; /* rosa pastel */
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.fondo button:hover {
+  background-color: #ff1493;
+}
+
