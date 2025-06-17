@@ -1,21 +1,25 @@
 import styles from "./itemsContainerStyles.module.css";
-import { type ReactNode} from "react";
+import { type ReactNode } from "react";
 
-type ContainerProps = {
-    titulo: string;
-    descripcion: string;
-    children: ReactNode;
-}
+type Props = {
+  titulo: string;
+  descripcion: string;
+  children: ReactNode;
+};
 
-function ItemsContainer(props: ContainerProps) {
-    const { titulo, descripcion, children: Children } = props;
-    return (
+function ItemsContainer({ titulo, descripcion, children }: Props) {
+  return (
     <section className={styles.contenedor}>
-        <h2>{titulo}</h2>
-        <p>{descripcion}</p>
-        <div className={styles.item}>{Children}</div>
+      <header className={styles.encabezado}>
+        <h2 className={styles.titulo}>{titulo}</h2>
+        <p className={styles.descripcion}>{descripcion}</p>
+      </header>
+
+      <div className={styles.grid}>
+        {children}
+      </div>
     </section>
-    );
+  );
 }
 
-export default ItemsContainer
+export default ItemsContainer;

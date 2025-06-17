@@ -2,33 +2,41 @@
   padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  max-width: 95vw;
+  gap: 16px;
+  max-width: 1200px;
   margin: auto;
   box-sizing: border-box;
-  overflow-x: hidden;
+}
+
+.encabezado {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.titulo {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+.descripcion {
+  font-size: 1rem;
+  color: #cccccc;
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  width: 100%;
+  padding: 8px 0;
 }
 
 .item {
-  display: flex;
-  flex-direction: row;
-  gap: 12px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  padding-bottom: 8px;
-}
-
-.item::-webkit-scrollbar {
-  height: 8px;
-}
-
-.item::-webkit-scrollbar-thumb {
-  background: #999;
-  border-radius: 4px;
-}
-
-.item > * {
-  scroll-snap-align: start;
-  flex-shrink: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  padding: 8px 0;
 }

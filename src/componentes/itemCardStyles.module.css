@@ -1,19 +1,17 @@
 .fondo {
-  min-width: 240px;
-  max-width: 320px;
-  flex: 0 0 auto;
-  background: rgba(255, 255, 255, 0.1); /* fondo más claro para armonía */
-  margin: 12px;
+  width: 240px;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 16px;
   padding: 16px;
   border-radius: 16px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  gap: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
 
 .fondo:hover {
@@ -22,44 +20,84 @@
 }
 
 .imagen {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 140px;
   object-fit: cover;
   border-radius: 12px;
-  flex-shrink: 0;
-  border: 2px solid white;
-  transition: transform 0.3s ease;
+  margin-bottom: 12px;
 }
 
-.imagen:hover {
-  transform: scale(1.05);
-}
-
-.fondo h2 {
-  margin: 0 0 8px 0;
+.cardTitle {
   font-size: 1.2rem;
   color: #fff;
+  margin: 8px 0 4px;
+  text-align: center;
 }
 
-.fondo p {
-  margin: 4px 0;
-  color: #ddd;
+.cardDescription {
   font-size: 0.95rem;
+  color: #ddd;
+  margin-bottom: 8px;
+  text-align: center;
 }
 
-.fondo button {
-  margin-top: 8px;
+.cardPrice {
+  font-size: 1rem;
+  color: #a5ffb9;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.agregar, .quitar {
   padding: 6px 12px;
   border: none;
   border-radius: 8px;
-  background-color: #ff69b4; /* rosa pastel */
-  color: white;
-  cursor: pointer;
   font-weight: bold;
+  cursor: pointer;
+  width: 100px;
   transition: background-color 0.3s ease;
 }
 
-.fondo button:hover {
-  background-color: #ff1493;
+.agregar {
+  background-color: #c0f5cc;
+  color: black;
 }
 
+.agregar:hover {
+  background-color: #3ae177;
+}
+
+.quitar {
+  background-color: #ffc2c2;
+  color: black;
+}
+
+.quitar:hover {
+  background-color: #ff5959;
+}
+
+.cartel {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #3ae177;
+  color: black;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
