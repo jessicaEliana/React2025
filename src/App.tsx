@@ -5,7 +5,7 @@ import FilterableList from "./componentes/FilterableList";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
-  // const [likesCount, setLikesCount] = useState(0);
+  const [likesCount, setLikesCount] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState("");
 
   return (
@@ -13,7 +13,7 @@ function App() {
       <NavBar 
         searchTerm={searchTerm} 
         setSearchTerm={setSearchTerm}
-        // cartCount={likesCount}
+        cartCount={likesCount}
       />
         
       <FilterableList
@@ -21,8 +21,9 @@ function App() {
         searchTerm={searchTerm}
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
+        likesCount={likesCount}
+        setLikesCount={setLikesCount}
       />
-      
     </div>
   );
 }

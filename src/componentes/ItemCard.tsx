@@ -18,7 +18,7 @@ function ItemCard({ titulo, descripcion, precio, src, currentLikes, setLikesCoun
     setAdded(true);
     setLikesCount(currentLikes + 1);
     setShowMessage(true);
-    setTimeout(() => setShowMessage(false), 2000); // Oculta el mensaje después de 2s
+    setTimeout(() => setShowMessage(false), 2000); 
   };
 
   const handleQuitar = () => {

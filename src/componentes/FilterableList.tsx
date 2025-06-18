@@ -1,9 +1,7 @@
 import ItemsContainer from "./ItemsContainer";
 import ItemCard from "./ItemCard";
 import styles from "./filtrosStyles.module.css";
-
 import type { Category } from "./types";
-
 
 type Props = {
   data: Category[];
@@ -11,15 +9,16 @@ type Props = {
   selectedCategory: string;
   setSelectedCategory: (value: string) => void;
   likesCount: number;
-  // setLikesCount: (count: number) => void;
+  setLikesCount: (count: number) => void;
 };
-
 
 function FilterableList({
   data,
   searchTerm,
   selectedCategory,
   setSelectedCategory,
+  likesCount,
+  setLikesCount,
 }: Props) {
   const filtered = data
     .filter(
@@ -32,7 +31,7 @@ function FilterableList({
         item.title.toLowerCase().includes(searchTerm.toLowerCase())
       ),
     }))
-    .filter((cat) => cat.items.length > 0); // Eliminar categorías vacías
+    .filter((cat) => cat.items.length > 0);
 
   return (
     <div className={styles.container}>
@@ -65,10 +64,9 @@ function FilterableList({
                 descripcion={item.description}
                 precio={item.price}
                 src={item.src}
-                // currentLikes={likesCount}
-  // s             etLikesCount={setLikesCount}
-/>
-
+                currentLikes={likesCount}
+                setLikesCount={setLikesCount}
+              />
             ))}
           </ItemsContainer>
         ))
